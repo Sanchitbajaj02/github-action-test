@@ -19,7 +19,7 @@ jobs:
       - name: Update author information
         run: echo ${{ env.GIT_COMMIT_AUTHOR_NAME }} > AUTHOR
 
-      - name: Raise PR
+      - name: Raise Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
           branch: "auto-pr-branch"
