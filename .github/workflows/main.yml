@@ -28,9 +28,3 @@ jobs:
           body: ${{ env.GIT_COMMIT_MESSAGE_BODY }}
           token: ${{ secrets.GITHUB_TOKEN }}
           delete-branch: false
-
-      - name: Create or Update Project Card
-        uses: peter-evans/create-or-update-project-card@v1
-        with:
-          project-name: Workflow
-          column-name: To do
