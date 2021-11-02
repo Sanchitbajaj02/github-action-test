@@ -37,5 +37,5 @@ jobs:
         uses: peter-evans/create-or-update-project-card@v1
         with:
           project-name: Workflow
-          column-name: To do
+          column-name: In progress
           issue-number: ${{ steps.cpr.outputs.pull-request-number }}
