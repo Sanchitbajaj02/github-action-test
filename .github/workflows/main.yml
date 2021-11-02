@@ -9,6 +9,7 @@ on:
 jobs:
   createPullRequest:
     runs-on: ubuntu-latest
+
     steps:
       - name: checking out code
         uses: actions/checkout@v2
@@ -17,7 +18,7 @@ jobs:
         uses: rlespinasse/git-commit-data-action@v1.x
 
       - name: update author file
-        uses: echo ${{ env.GIT_COMMIT_MESSAGE_SUBJECT }} > AUTHOR.md
+        run: echo ${{ env.GIT_COMMIT_MESSAGE_SUBJECT }} > AUTHOR.md
 
       - name: Raise Pull Request
         id: cpr
