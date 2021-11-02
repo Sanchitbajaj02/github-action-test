@@ -34,4 +34,3 @@ jobs:
         with:
           project-name: Workflow
           column-name: To do
-          issue-number: ${{ steps.cpr.outputs.pull-request-number }}
