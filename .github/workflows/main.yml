@@ -5,9 +5,10 @@ name: Demo to create automatic PR
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [master, prod, tester]
-  pull_request:
-    branches: [master, prod, tester]
+    branches:
+      - master
+      - prod
+      - tester
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -40,10 +41,9 @@ jobs:
           author: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}">
           body: ${{ env.GIT_COMMIT_MESSAGE_BODY }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          team-reviewers: owners
           delete-branch: true
 
-      - name: Update Project Card
+      - name: Create or Update Project Card
         uses: peter-evans/create-or-update-project-card@v1
         with:
           project-name: Workflow
